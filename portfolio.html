@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Eragamreddy Likitha, a final-year B.Tech AI and ML student.">
+    <title>Eragamreddy Likitha | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #080d1b;
+            --header: #0c1428;
+            --card: #101a30;
+            --accent: #52e0f5;
+            --text: #f4f7ff;
+            --muted: #b9c5d9;
+            --border: #26344f;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--header);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .logo {
+            color: var(--accent);
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 17px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        section {
+            padding: 75px 10%;
+            scroll-margin-top: 75px;
+        }
+
+        .hero {
+            min-height: 86vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background:
+                radial-gradient(circle at 85% 20%, #25346b 0, transparent 35%),
+                radial-gradient(circle at 10% 85%, #143a51 0, transparent 35%),
+                var(--bg);
+        }
+
+        .tag {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 6vw, 58px);
+            line-height: 1.2;
+            margin: 17px 0;
+        }
+
+        .hero h1 span,
+        .section-title span {
+            color: var(--accent);
+        }
+
+        .hero p.description {
+            color: var(--muted);
+            font-size: 17px;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #07111e;
+            text-decoration: none;
+            padding: 11px 23px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            font-size: 31px;
+            margin: 8px 0 12px;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .card p,
+        .card li {
+            color: var(--muted);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+            gap: 13px;
+        }
+
+        .skill {
+            text-align: center;
+            padding: 15px 10px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .label {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        .education-meta {
+            color: var(--accent);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-top: 22px;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            padding: 12px 17px;
+            color: var(--text);
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px 15px;
+            background: var(--header);
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+        }
+
+        @media (max-width: 650px) {
+            header {
+                justify-content: center;
+                padding: 15px 5%;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            .contact-links a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Likitha.</div>
+
+    <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#internships">Internships</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+        <p class="tag">Welcome to my portfolio</p>
+
+        <h1>Hi, I'm<br>
+            <span>Eragamreddy Likitha</span>
+        </h1>
+
+        <p class="description">
+            Final-year B.Tech student specializing in Artificial Intelligence
+            and Machine Learning at Mohan Babu University. I am passionate
+            about Python, Java, web development, machine learning, and
+            building innovative technology solutions.
+        </p>
+
+        <a href="#projects" class="btn">Explore My Projects ↗</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <p class="tag">Get to know me</p>
+        <h2 class="section-title">About <span>Me</span></h2>
+
+        <div class="card">
+            <p>
+                Hello! I'm Eragamreddy Likitha, a B.Tech student in
+                Computer Science specializing in Artificial Intelligence
+                and Machine Learning. I have knowledge of Python, Java,
+                C, SQL, web technologies, and machine learning libraries.
+            </p>
+            <br>
+            <p>
+                I enjoy solving problems, developing software solutions,
+                and exploring emerging technologies. I value teamwork,
+                continuous learning, and opportunities to apply my
+                technical knowledge to real-world challenges.
+            </p>
+
+                    </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <p class="tag">My technical toolkit</p>
+        <h2 class="section-title">Technical <span>Skills</span></h2>
+
+        <p class="section-intro">
+            Technologies and tools I use to learn, develop, and solve problems.
+        </p>
+
+        <div class="skills-grid">
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">C Programming</div>
+            <div class="skill">SQL</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Machine Learning</div>
+            <div class="skill">Scikit-learn</div>
+            <div class="skill">NumPy</div>
+            <div class="skill">Pandas</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">VS Code</div>
+            <div class="skill">Problem Solving</div>
+            <div class="skill">Communication</div>
+            <div class="skill">Teamwork</div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <p class="tag">Things I've worked on</p>
+        <h2 class="section-title">My <span>Projects</span></h2>
+
+        <p class="section-intro">
+            A selection of projects demonstrating my technical knowledge
+            and interest in developing practical solutions.
+        </p>
+
+        <div class="grid">
+
+            <article class="card">
+                <h3>01. Carbon Footprint Emission Tracker</h3>
+
+                <p>
+                    A sustainability-focused platform designed to track
+                    carbon emissions and help users understand their
+                    environmental impact.
+                </p>
+
+                <ul>
+                    <li>Tracks carbon emissions and environmental impact.</li>
+                    <li>Provides insights to encourage sustainable lifestyle choices.</li>
+                </ul>
+
+                <p class="label">TECHNOLOGIES</p>
+                <p>Project technologies can be added based on your implementation.</p>
+            </article>
+
+            <article class="card">
+                <h3>02. Personal Portfolio Website</h3>
+
+                <p>
+                    A responsive personal website showcasing my profile,
+                    technical skills, projects, and professional contact details.
+                </p>
+
+                <ul>
+                    <li>Created a clean and professional interface.</li>
+                    <li>Organized portfolio information into clear sections.</li>
+                </ul>
+
+                <p class="label">TECHNOLOGIES</p>
+                <p>HTML, CSS, JavaScript</p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- INTERNSHIPS -->
+    <section id="internships">
+        <p class="tag">Professional learning</p>
+        <h2 class="section-title">Internship <span>Experience</span></h2>
+
+        <div class="grid">
+
+            <article class="card">
+                <h3>Web Development Intern</h3>
+                <p class="education-meta">Oasis Infobyte</p>
+
+                <ul>
+                    <li>Developed responsive web pages using HTML, CSS, and JavaScript.</li>
+                    <li>Gained practical experience in front-end development and UI design.</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3>Programming with Python</h3>
+                <p class="education-meta">Internshala | May – July 2024</p>
+
+                <ul>
+                    <li>Completed a six-week certified Python training program.</li>
+                    <li>Learned Python fundamentals, OOP, and file handling.</li>
+                    <li>Recognized as a top performer for project work.</li>
+                </ul>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <p class="tag">My academic journey</p>
+        <h2 class="section-title">My <span>Education</span></h2>
+
+        <div class="grid">
+
+            <article class="card">
+                <h3>B.Tech — Artificial Intelligence and Machine Learning</h3>
+                <p class="education-meta">2023 – 2027 | Expected May 2027</p>
+                <p>Mohan Babu University, Tirupati</p>
+                <p><strong>GPA: 9.4 / 10</strong></p>
+            </article>
+
+            <article class="card">
+                <h3>Higher Secondary Education (12th Grade)</h3>
+                <p class="education-meta">2021 – 2023</p>
+                <p>Narayana Junior College — M.P.C</p>
+                <p><strong>Percentage: 94%</strong></p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+        <p class="tag">Learning and development</p>
+        <h2 class="section-title">My <span>Certifications</span></h2>
+
+        <div class="grid">
+            <article class="card">
+                <h3>Python Programming</h3>
+                <p>Python programming knowledge and fundamentals.</p>
+            </article>
+
+            <article class="card">
+                <h3>Web Development Workshop</h3>
+                <p>Learning experience in web development technologies.</p>
+            </article>
+
+            <article class="card">
+                <h3>Java Essentials</h3>
+                <p>Fundamental Java programming concepts.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <p class="tag">Let's connect</p>
+        <h2 class="section-title">Contact <span>Me</span></h2>
+
+        <p class="section-intro">
+            I'm interested in learning, collaborating, and exploring
+            opportunities in technology. Feel free to connect with me.
+        </p>
+
+        <div class="contact-links">
+            <a href="mailto:eragamreddylikitha@gmail.com">
+                ✉ Email Me
+            </a>
+
+            <a href="tel:+918179367024">
+                ☎ 8179367024
+            </a>
+
+            <a href="https://github.com/Likitha-7"
+               target="_blank" rel="noopener noreferrer">
+                GitHub ↗
+            </a>
+
+            <a href="https://www.linkedin.com/in/eragamreddy-likitha-43b581333/"
+               target="_blank" rel="noopener noreferrer">
+                LinkedIn ↗
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© <span id="year"></span> Eragamreddy Likitha | Personal Portfolio</p>
+    <p>Designed with passion for technology.</p>
+</footer>
+
+<script>
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>
